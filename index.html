@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level Up · Rooftop Commons, Singapore</title>
+<meta name="description" content="A tactical urbanism proposal: turning the empty top deck of a Sengkang multi-storey car park into a neighbourhood rooftop commons.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231d2346'/><path d='M7 22h18M7 17h18M9 12l7-5 7 5' stroke='%23f08a4b' stroke-width='3' fill='none'/></svg>">
+<style>
+:root{
+  --ink:#1a1d33; --night:#1d2346; --dusk:#7a3f5c; --sun:#f08a4b; --amber:#f2a541;
+  --leaf:#5fae6e; --teal:#2e8f8a; --chili:#e2574c; --paper:#f6f1e9; --concrete:#d9d3c9;
+  --muted:#5b5f78;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:"Inter Tight",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;font-size:clamp(16px,1.25vw,20px)}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.02;letter-spacing:-.02em}
+section{min-height:100vh;scroll-snap-align:start;padding:clamp(56px,7vh,96px) clamp(16px,6vw,110px);display:flex;flex-direction:column;justify-content:center;position:relative}
+.kicker{font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.72em;color:var(--sun);margin-bottom:1em}
+h2{font-size:clamp(34px,5vw,74px);margin-bottom:.45em;max-width:16ch}
+.lede{font-size:1.2em;max-width:44ch;color:var(--muted)}
+.dark{background:var(--night);color:#f3eee6}
+.dark .lede{color:#c9cde6}
+.num{position:absolute;top:28px;right:clamp(16px,6vw,110px);font-family:"Bricolage Grotesque";font-size:.8em;opacity:.45}
+
+/* hero */
+#hero{background:linear-gradient(180deg,#1d2346 0%,#4a2f55 55%,#c86a4a 88%,#f2a541 100%);color:#fff8ee;overflow:hidden}
+#hero h1{font-size:clamp(64px,12vw,190px);font-weight:800;letter-spacing:-.045em}
+#hero h1 span{color:#ffc77a}
+#hero p{font-size:clamp(18px,2vw,28px);max-width:30ch;margin-top:.6em;color:#ffe9cc}
+#hero .meta{margin-top:2.2em;font-size:.85em;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.decks{position:absolute;right:-2vw;bottom:0;width:min(46vw,640px);opacity:.9}
+.decks div{height:clamp(26px,5vh,48px);border-top:8px solid #e8dccb;background:rgba(20,22,45,.55);margin-top:clamp(14px,2.4vh,26px)}
+.decks div:first-child{background:transparent;border-top-color:#ffc77a;box-shadow:0 -14px 40px rgba(255,199,122,.55)}
+@media (max-width:700px){.decks{width:70vw;opacity:.35}}
+
+/* grid helpers */
+.two{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.stats{display:grid;gap:18px}
+.stat{border-left:4px solid var(--sun);padding:6px 0 6px 18px}
+.stat b{display:block;font-family:"Bricolage Grotesque";font-size:clamp(36px,4.4vw,64px);line-height:1;color:var(--ink)}
+.dark .stat b{color:#fff8ee}
+.stat span{font-size:.9em;color:var(--muted)}
+.dark .stat span{color:#c9cde6}
+ul.ticks{list-style:none;display:grid;gap:.7em;margin-top:1.2em}
+ul.ticks li{padding-left:1.5em;position:relative;max-width:52ch}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:.7em;height:.7em;border-radius:50%;background:var(--sun)}
+
+/* zones */
+.zones{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:1.6em}
+@media (max-width:900px){.zones{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.zones{grid-template-columns:1fr}}
+.zone{border-radius:16px;padding:22px;color:#fff;min-height:200px;display:flex;flex-direction:column}
+.zone h3{font-size:1.45em;margin-bottom:.4em}
+.zone p{font-size:.92em;opacity:.95}
+.zone .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:2.2em;opacity:.35;margin-top:auto;align-self:flex-end}
+.z1{background:var(--leaf)} .z2{background:var(--chili)} .z3{background:var(--teal)} .z4{background:var(--amber);color:var(--ink)}
+.when{margin-top:1.4em;display:flex;flex-wrap:wrap;gap:10px}
+.pill{border:1.5px solid currentColor;border-radius:99px;padding:.35em .9em;font-size:.85em;font-weight:600}
+
+figure img{width:100%;height:auto;display:block;border-radius:14px}
+figcaption{font-size:.8em;color:var(--muted);margin-top:.6em}
+.dark figcaption{color:#c9cde6}
+#visual .figs{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:end}
+@media (max-width:900px){#visual .figs{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:1.8em;position:relative}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;gap:18px}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 22px 22px 0;border-top:3px solid #c9c2b6;position:relative}
+.step::before{content:"";position:absolute;top:-10px;left:0;width:17px;height:17px;border-radius:50%;background:var(--paper);border:3px solid var(--sun)}
+.step.on::before{background:var(--sun)}
+.step small{font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--sun);font-size:.7em}
+.step h3{font-size:1.3em;margin:.25em 0 .4em}
+.step p{font-size:.9em;color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:1.6em}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:24px}
+.card h3{font-size:1.5em;margin-bottom:.5em;color:#ffc77a}
+.card ul{list-style:none;display:grid;gap:.55em;font-size:.95em;color:#e6e2f0}
+.card li::before{content:"→ ";color:var(--sun)}
+
+.data{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:1.4em}
+@media (max-width:860px){.data{grid-template-columns:1fr 1fr}}
+.data div{background:#fff;border-radius:14px;padding:16px;border:1px solid #e6dfd3}
+.data b{display:block;font-family:"Bricolage Grotesque";font-size:1.1em;margin-bottom:.2em}
+.data span{font-size:.85em;color:var(--muted)}
+
+#close h2{max-width:20ch}
+.sources{margin-top:2.4em;font-size:.78em;color:#c9cde6;columns:2;column-gap:40px}
+@media (max-width:760px){.sources{columns:1}}
+.sources a{color:#ffc77a;text-decoration:none}
+.sources a:hover{text-decoration:underline}
+.sources li{margin-bottom:.5em;break-inside:avoid}
+
+/* nav dots */
+nav.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:10}
+nav.dots a{width:11px;height:11px;border-radius:50%;background:rgba(120,120,140,.45);display:block;transition:.2s}
+nav.dots a.active{background:var(--sun);transform:scale(1.35)}
+@media (max-width:700px){nav.dots{display:none}}
+.hint{position:fixed;left:18px;bottom:14px;font-size:12px;color:var(--muted);background:rgba(246,241,233,.8);padding:4px 10px;border-radius:99px;z-index:10}
+@media (max-width:700px){.hint{display:none}}
+@media print{html{scroll-snap-type:none}nav.dots,.hint{display:none}section{min-height:auto;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<nav class="dots" aria-label="Slides"></nav>
+<div class="hint">← → or ↑ ↓ to move between slides</div>
+
+<!-- 1 -->
+<section id="hero">
+  <div class="kicker">Tactical urbanism · Singapore</div>
+  <h1>Level <span>Up</span></h1>
+  <p>Turning the empty top deck of a Sengkang car park into a neighbourhood rooftop commons.</p>
+  <div class="meta">Development of Intelligent Cities · Term project</div>
+  <div class="decks" aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div>
+</section>
+
+<!-- 2 -->
+<section id="site">
+  <span class="num">01 · Site</span>
+  <div class="two">
+    <div>
+      <div class="kicker">The site</div>
+      <h2>The emptiest floor in a crowded town</h2>
+      <p class="lede">Sengkang is one of Singapore's newest HDB towns. Its housing blocks share multi-storey car parks sized decades ago for car demand that never fully arrived.</p>
+      <ul class="ticks">
+        <li>The <b>uncovered top deck</b> is the hottest, furthest level — the last one anyone parks on, so it sits mostly empty.</li>
+        <li>New towns cluster shops and gathering places near transport hubs, leaving <b>few informal places to meet near home</b>.</li>
+        <li>Yet the deck is flat, built to carry load, reachable by lift and a few metres from thousands of residents — with views and an evening breeze.</li>
+      </ul>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>~66%</b><span>average season-parking take-up across all HDB car parks</span></div>
+      <div class="stat"><b>50–70%</b><span>take-up in Sengkang and Punggol car parks</span></div>
+      <div class="stat"><b>16 + 6</b><span>car-park roofs already turned into urban farms and community gardens by 2022 — the precedent exists</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="idea" class="dark">
+  <span class="num">02 · Intervention</span>
+  <div class="kicker">The pilot</div>
+  <h2>12 weekends. 4 zones. Nothing permanent.</h2>
+  <p class="lede">"Level Up" opens the top deck on Friday–Sunday evenings and early mornings, when the heat eases. Everything is movable and cheap: shade sails, pallet seating, modular planters, string lights and paint.</p>
+  <div class="zones">
+    <div class="zone z1"><h3>Shade &amp; Grow</h3><p>Shade sails over planter crates that families adopt — herbs, chilli, kangkong.</p><span class="n">1</span></div>
+    <div class="zone z2"><h3>Makan</h3><p>A small evening market for home-based businesses and neighbourhood hawkers.</p><span class="n">2</span></div>
+    <div class="zone z3"><h3>Play</h3><p>A painted pickleball / futsal court and a chalk strip for kids. Tai chi at sunrise.</p><span class="n">3</span></div>
+    <div class="zone z4"><h3>Sunset Screen</h3><p>Films, football and local talks projected on the stair-core wall.</p><span class="n">4</span></div>
+  </div>
+  <div class="when">
+    <span class="pill">Fri–Sun · 6–10 pm</span>
+    <span class="pill">Sat–Sun · 7–9 am seniors' tai chi &amp; walks</span>
+    <span class="pill">Parking below untouched</span>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="visual">
+  <span class="num">03 · Visualization</span>
+  <div class="kicker">What it looks like</div>
+  <h2 style="max-width:none">Same car park. One floor, reclaimed.</h2>
+  <div class="figs">
+    <figure>
+      <img src="section.svg" alt="Section drawing of a multi-storey car park between two HDB blocks at sunset. Lower levels hold a few parked cars; the top deck has shade sails, string lights, planters, market stalls, a play court and an audience watching a film projected on the stair core.">
+      <figcaption>Section: cars stay on the levels below; the top deck becomes a lit, shaded evening commons.</figcaption>
+    </figure>
+    <figure>
+      <img src="plan.svg" alt="Plan of the top deck divided into four zones: Shade and Grow, Makan market, Play court, and Sunset Screen next to the lift core, with sensor points marked.">
+      <figcaption>Plan: four zones sit on the old parking grid, with sensors near each entrance.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="people">
+  <span class="num">04 · Participation &amp; data</span>
+  <div class="two">
+    <div>
+      <div class="kicker">Built with residents</div>
+      <h2>Residents design it, run it and vote on it</h2>
+      <ul class="ticks">
+        <li><b>"Chalk the deck" day</b> — residents draw the layout full-size on the concrete before anything is installed.</li>
+        <li><b>QR voting board</b> at the lift lobby: anyone picks next weekend's film, class or market theme.</li>
+        <li><b>Deck captains</b> — volunteers from residents' networks open, run and close each night.</li>
+        <li><b>Good-neighbour rules</b> — 10 pm close, inward-facing speakers, a decibel limit.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="kicker">The intelligent-city layer</div>
+      <p class="lede" style="color:var(--ink)">Low-cost sensors turn the pilot into open evidence for a permanent decision.</p>
+      <div class="data" style="grid-template-columns:1fr 1fr">
+        <div><b>Footfall</b><span>Who comes, when, how long</span></div>
+        <div><b>Heat</b><span>Deck temperature under shade vs. bare concrete</span></div>
+        <div><b>Noise</b><span>Proof neighbours aren't disturbed</span></div>
+        <div><b>Parking</b><span>Gantry data shows no cars displaced</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="permanent">
+  <span class="num">05 · Path to permanence</span>
+  <div class="kicker">From pop-up to policy</div>
+  <h2>Test cheaply, then scale what works</h2>
+  <p class="lede">Singapore already has the channels: the URA–HDB Lively Places Fund backs ground-up public-space ideas, and HDB has converted some car-park rooftops into community gardens and urban farms.</p>
+  <div class="steps">
+    <div class="step on"><small>Week 0</small><h3>Test night</h3><p>One weekend, chalk-the-deck workshop, first sensor baseline.</p></div>
+    <div class="step on"><small>Weeks 1–12</small><h3>Pilot</h3><p>Full programme, funded via Lively Places Fund and the town council.</p></div>
+    <div class="step"><small>Year 1</small><h3>Make it permanent</h3><p>If the data holds: a solar canopy for shade and power, fixed courts and garden beds, a residents' committee.</p></div>
+    <div class="step"><small>Year 2+</small><h3>Playbook</h3><p>An open guide for other under-used car-park roofs across the island.</p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="impact" class="dark">
+  <span class="num">06 · Impact</span>
+  <div class="kicker">Expected impact</div>
+  <h2>Dead concrete becomes a third place</h2>
+  <div class="cards">
+    <div class="card"><h3>Social</h3><ul><li>A walkable place to meet near home</li><li>Seniors, kids and neighbours share one space</li><li>Residents gain a say in their estate</li></ul></div>
+    <div class="card"><h3>Economic</h3><ul><li>Low-cost stalls for home-based businesses</li><li>Spending stays in the neighbourhood</li><li>No new land or construction needed</li></ul></div>
+    <div class="card"><h3>Functional &amp; green</h3><ul><li>Single-use parking becomes multi-use space</li><li>Shade, planting and later solar cool the hottest surface</li><li>Growing supports Singapore Food Story 2</li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="close" class="dark" style="background:linear-gradient(180deg,#1d2346 0%,#3a2a4f 100%)">
+  <span class="num">07</span>
+  <div class="kicker">In one line</div>
+  <h2>Low cost, gone in a day if it fails — and a model for hundreds of car-park roofs if it works.</h2>
+  <ol class="sources">
+    <li>MND, written answer on MSCP utilisation in Sengkang &amp; Punggol (Oct 2022) — <a href="https://www.mnd.gov.sg/newsroom/speeches/view/written-answer-by-ministry-of-national-development-on-utilisation-rate-of-parking-lots-in-multi-storey-car-parks-and-plans-to-utilise-empty-lots">mnd.gov.sg</a></li>
+    <li>MND, oral answer on community gardens &amp; urban farms on MSCPs (Mar 2022) — <a href="https://www.mnd.gov.sg/newsroom/speeches/view/oral-answer-by-ministry-of-national-development-on-number-of-community-gardens-and-urban-farms-that-have-been-set-up-on-unutilised-hdb-multi-storey-carparks-to-date">mnd.gov.sg</a></li>
+    <li>MND, written answer on converting HDB car park spaces for alternative uses (Nov 2025) — <a href="https://www.mnd.gov.sg/newsroom/speeches/view/written-answer-by-ministry-of-national-development-on-considerations-for-converting-hdb-carpark-spaces-for-alternative-uses">mnd.gov.sg</a></li>
+    <li>COS 2021 speech on commercial use of MSCP upper levels in new towns — <a href="https://leaderoftheopposition.sg/2021/03/04/cos-2021-commercial-spaces-in-hdb-multi-storey-carparks">leaderoftheopposition.sg</a></li>
+    <li>URA, Place management &amp; the Lively Places Fund — <a href="https://www.ura.gov.sg/Corporate/Get-Involved/Shape-A-Distinctive-City/Placemaking-and-Partnership">ura.gov.sg</a></li>
+    <li>SFA, Singapore Food Story 2 announcement (Nov 2025) — <a href="https://www.sfa.gov.sg/news-publications/newsroom/Asia-Pacific-Agri-Food-Innovation-Summit-Grace-Fu-Speech">sfa.gov.sg</a></li>
+    <li>SFA, MSCP rooftop sites for urban farming — <a href="https://sfa.gov.sg/newsroom/press-releases/sfa-launches-tender-for-the-rental-of-7-hdb-mscp-rooftop-sites-for-urban-farming">sfa.gov.sg</a></li>
+    <li>Visualizations: original drawings made for this project. <a href="proposal.html">One-page proposal text →</a></li>
+  </ol>
+</section>
+
+<script>
+(function(){
+  const secs=[...document.querySelectorAll('section')];
+  const nav=document.querySelector('nav.dots');
+  secs.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;a.setAttribute('aria-label','Slide '+(i+1));nav.appendChild(a);});
+  const dots=[...nav.children];
+  let cur=0;
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>.5){cur=secs.indexOf(e.target);dots.forEach((d,i)=>d.classList.toggle('active',i===cur));}})},{threshold:[.5,.75]});
+  secs.forEach(s=>io.observe(s));
+  document.addEventListener('keydown',e=>{
+    const next=['ArrowDown','ArrowRight','PageDown',' '].includes(e.key);
+    const prev=['ArrowUp','ArrowLeft','PageUp'].includes(e.key);
+    if(!next&&!prev)return;
+    e.preventDefault();
+    cur=Math.max(0,Math.min(secs.length-1,cur+(next?1:-1)));
+    secs[cur].scrollIntoView({behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>

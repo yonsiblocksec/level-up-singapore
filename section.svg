@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="Inter Tight, Inter, Arial, sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d2346"/>
+      <stop offset="0.55" stop-color="#7a3f5c"/>
+      <stop offset="0.85" stop-color="#f08a4b"/>
+      <stop offset="1" stop-color="#ffc77a"/>
+    </linearGradient>
+    <linearGradient id="sail" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4e2"/>
+      <stop offset="1" stop-color="#f4cfa0"/>
+    </linearGradient>
+    <pattern id="win" width="22" height="18" patternUnits="userSpaceOnUse">
+      <rect width="22" height="18" fill="#2c3157"/>
+      <rect x="4" y="4" width="12" height="9" fill="#ffd28a" opacity="0.85"/>
+    </pattern>
+    <pattern id="win2" width="22" height="18" patternUnits="userSpaceOnUse">
+      <rect width="22" height="18" fill="#2c3157"/>
+      <rect x="4" y="4" width="12" height="9" fill="#3d4472"/>
+    </pattern>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1200" height="620" fill="url(#sky)"/>
+  <circle cx="600" cy="560" r="70" fill="#ffd9a0" opacity="0.6"/>
+
+  <!-- HDB blocks -->
+  <rect x="20" y="70" width="230" height="510" fill="url(#win)"/>
+  <rect x="20" y="70" width="230" height="510" fill="#000" opacity="0.18"/>
+  <rect x="950" y="40" width="230" height="540" fill="url(#win2)"/>
+  <rect x="1020" y="90" width="90" height="490" fill="url(#win)" opacity="0.9"/>
+  <text x="135" y="60" fill="#ffe9cc" font-size="15" text-anchor="middle" font-weight="600">HDB block</text>
+  <text x="1065" y="30" fill="#ffe9cc" font-size="15" text-anchor="middle" font-weight="600">HDB block</text>
+
+  <!-- ground -->
+  <rect x="0" y="580" width="1200" height="40" fill="#22253f"/>
+
+  <!-- MSCP lower levels -->
+  <g>
+    <rect x="300" y="300" width="600" height="280" fill="#3a3f5e"/>
+    <!-- slabs -->
+    <g fill="#c9c6c0">
+      <rect x="295" y="292" width="610" height="10"/>
+      <rect x="295" y="348" width="610" height="8"/>
+      <rect x="295" y="404" width="610" height="8"/>
+      <rect x="295" y="460" width="610" height="8"/>
+      <rect x="295" y="516" width="610" height="8"/>
+    </g>
+    <!-- columns -->
+    <g fill="#8d8a86">
+      <rect x="300" y="300" width="10" height="280"/>
+      <rect x="445" y="300" width="10" height="280"/>
+      <rect x="595" y="300" width="10" height="280"/>
+      <rect x="745" y="300" width="10" height="280"/>
+      <rect x="890" y="300" width="10" height="280"/>
+    </g>
+    <!-- cars -->
+    <g fill="#9fb4d9">
+      <rect x="330" y="530" width="44" height="18" rx="6"/><rect x="390" y="530" width="44" height="18" rx="6"/>
+      <rect x="470" y="530" width="44" height="18" rx="6"/><rect x="530" y="530" width="44" height="18" rx="6"/>
+      <rect x="620" y="530" width="44" height="18" rx="6"/><rect x="690" y="530" width="44" height="18" rx="6"/>
+      <rect x="770" y="530" width="44" height="18" rx="6"/><rect x="830" y="530" width="44" height="18" rx="6"/>
+      <rect x="330" y="474" width="44" height="18" rx="6"/><rect x="470" y="474" width="44" height="18" rx="6"/>
+      <rect x="530" y="474" width="44" height="18" rx="6"/><rect x="690" y="474" width="44" height="18" rx="6"/>
+      <rect x="830" y="474" width="44" height="18" rx="6"/>
+      <rect x="390" y="418" width="44" height="18" rx="6"/><rect x="620" y="418" width="44" height="18" rx="6"/>
+      <rect x="770" y="418" width="44" height="18" rx="6"/>
+      <rect x="530" y="362" width="44" height="18" rx="6"/>
+    </g>
+    <g fill="#e9a6a6">
+      <rect x="250" y="410" width="0" height="0"/>
+    </g>
+    <text x="600" y="337" fill="#c9cde6" font-size="14" text-anchor="middle" font-style="italic">Levels below: parking unchanged — upper levels already half empty</text>
+  </g>
+
+  <!-- stair / lift core -->
+  <rect x="860" y="180" width="90" height="400" fill="#4a4f70"/>
+  <rect x="868" y="190" width="74" height="70" fill="#f6eedf"/>
+  <rect x="868" y="190" width="74" height="70" fill="#f08a4b" opacity="0.25"/>
+  <polygon points="870,250 890,222 905,238 918,214 940,250" fill="#7a3f5c" opacity="0.7"/>
+  <circle cx="928" cy="204" r="6" fill="#ffc77a"/>
+
+  <!-- top deck surface -->
+  <rect x="295" y="282" width="565" height="12" fill="#d8d3cb"/>
+
+  <!-- shade sails -->
+  <g stroke="#e8dccb" stroke-width="2">
+    <line x1="330" y1="282" x2="330" y2="185"/>
+    <line x1="560" y1="282" x2="560" y2="175"/>
+    <line x1="720" y1="282" x2="720" y2="185"/>
+  </g>
+  <path d="M330 185 L560 175 L445 215 Z" fill="url(#sail)" opacity="0.95"/>
+  <path d="M560 175 L720 185 L640 212 Z" fill="url(#sail)" opacity="0.85"/>
+
+  <!-- string lights -->
+  <path d="M330 200 Q 445 245 560 192 Q 640 235 720 200 Q 790 232 860 205" fill="none" stroke="#ffe7a8" stroke-width="1.5"/>
+  <g fill="#ffe08a">
+    <circle cx="360" cy="212" r="3"/><circle cx="400" cy="222" r="3"/><circle cx="445" cy="224" r="3"/><circle cx="490" cy="219" r="3"/><circle cx="530" cy="206" r="3"/>
+    <circle cx="595" cy="207" r="3"/><circle cx="640" cy="213" r="3"/><circle cx="685" cy="207" r="3"/>
+    <circle cx="750" cy="212" r="3"/><circle cx="790" cy="216" r="3"/><circle cx="830" cy="210" r="3"/>
+  </g>
+
+  <!-- planters (Shade & Grow) -->
+  <g>
+    <rect x="312" y="260" width="40" height="22" fill="#8a5a3b"/>
+    <rect x="358" y="260" width="40" height="22" fill="#8a5a3b"/>
+    <g fill="#5fae6e">
+      <circle cx="322" cy="256" r="8"/><circle cx="336" cy="252" r="9"/><circle cx="346" cy="258" r="6"/>
+      <circle cx="368" cy="255" r="8"/><circle cx="382" cy="250" r="10"/><circle cx="392" cy="257" r="6"/>
+    </g>
+  </g>
+
+  <!-- market stalls (Makan) -->
+  <g>
+    <rect x="420" y="250" width="50" height="32" fill="#f4ede2"/>
+    <path d="M414 250 L476 250 L466 236 L424 236 Z" fill="#e2574c"/>
+    <rect x="482" y="250" width="50" height="32" fill="#f4ede2"/>
+    <path d="M476 250 L538 250 L528 236 L486 236 Z" fill="#f2a541"/>
+  </g>
+
+  <!-- court (Play) -->
+  <g>
+    <rect x="565" y="279" width="140" height="4" fill="#2e8f8a"/>
+    <line x1="635" y1="262" x2="635" y2="281" stroke="#f6eedf" stroke-width="2"/>
+    <line x1="625" y1="262" x2="645" y2="262" stroke="#f6eedf" stroke-width="2"/>
+  </g>
+
+  <!-- seating + screen audience -->
+  <g fill="#c48b5a">
+    <rect x="745" y="270" width="36" height="12"/>
+    <rect x="795" y="270" width="36" height="12"/>
+  </g>
+
+  <!-- people -->
+  <g fill="#1a1d33">
+    <!-- garden -->
+    <circle cx="405" cy="246" r="5"/><rect x="401" y="252" width="8" height="30" rx="3"/>
+    <!-- market -->
+    <circle cx="447" cy="258" r="4.5"/><rect x="443" y="263" width="8" height="19" rx="3"/>
+    <circle cx="545" cy="246" r="5"/><rect x="541" y="252" width="8" height="30" rx="3"/>
+    <circle cx="510" cy="258" r="4.5"/><rect x="506" y="263" width="8" height="19" rx="3"/>
+    <!-- play -->
+    <circle cx="595" cy="244" r="5"/><rect x="591" y="250" width="8" height="30" rx="3"/>
+    <circle cx="676" cy="244" r="5"/><rect x="672" y="250" width="8" height="30" rx="3"/>
+    <circle cx="700" cy="258" r="4"/><rect x="697" y="263" width="7" height="17" rx="3"/>
+    <!-- audience -->
+    <circle cx="756" cy="256" r="5"/><rect x="752" y="262" width="8" height="10" rx="3"/>
+    <circle cx="772" cy="256" r="5"/><rect x="768" y="262" width="8" height="10" rx="3"/>
+    <circle cx="806" cy="256" r="5"/><rect x="802" y="262" width="8" height="10" rx="3"/>
+    <circle cx="822" cy="256" r="5"/><rect x="818" y="262" width="8" height="10" rx="3"/>
+  </g>
+  <circle cx="615" cy="232" r="4" fill="#ffd34d"/>
+
+  <!-- labels -->
+  <g font-size="14" font-weight="700" fill="#fff8ee">
+    <line x1="355" y1="245" x2="300" y2="140" stroke="#fff8ee" stroke-width="1"/>
+    <rect x="200" y="112" width="134" height="30" rx="15" fill="#5fae6e"/>
+    <text x="267" y="132" text-anchor="middle">1 · Shade &amp; Grow</text>
+
+    <line x1="476" y1="236" x2="470" y2="120" stroke="#fff8ee" stroke-width="1"/>
+    <rect x="410" y="92" width="120" height="30" rx="15" fill="#e2574c"/>
+    <text x="470" y="112" text-anchor="middle">2 · Makan</text>
+
+    <line x1="640" y1="240" x2="640" y2="120" stroke="#fff8ee" stroke-width="1"/>
+    <rect x="590" y="92" width="100" height="30" rx="15" fill="#2e8f8a"/>
+    <text x="640" y="112" text-anchor="middle">3 · Play</text>
+
+    <line x1="905" y1="190" x2="860" y2="130" stroke="#fff8ee" stroke-width="1"/>
+    <rect x="760" y="102" width="160" height="30" rx="15" fill="#f2a541"/>
+    <text x="840" y="122" text-anchor="middle" fill="#1a1d33">4 · Sunset Screen</text>
+  </g>
+
+  <text x="600" y="610" fill="#c9cde6" font-size="13" text-anchor="middle">Section through a Sengkang multi-storey car park · weekend evening · concept sketch, not to scale</text>
+</svg>
